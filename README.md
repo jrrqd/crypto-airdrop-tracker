@@ -13,6 +13,10 @@ A minimalistic Chrome extension that displays the latest crypto airdrop schedule
 
 ## Installation
 
+Via Chrome Web Store
+[Via Chrome Web Store](https://chromewebstore.google.com/detail/airdrop-tracker/amjgfpkbidikfbdpnbnedphdaglglldn?authuser=0&hl=en-GB)
+
+Manual
 1. Download the `airdrop-extension.zip` file
 2. Extract the contents to a folder
 3. Open Chrome and navigate to `chrome://extensions/`
