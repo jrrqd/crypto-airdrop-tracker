@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airdrop Tracker</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header-content">
+        <img src="icons/icon32.png" alt="Airdrop Tracker" class="logo">
+        <h1 class="title">Airdrop Tracker</h1>
+      </div>
+      <div class="refresh-btn" id="refreshBtn" title="Refresh data">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="23 4 23 10 17 10"></polyline>
+          <polyline points="1 20 1 14 7 14"></polyline>
+          <path d="m3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+        </svg>
+      </div>
+    </header>
+
+    <div class="status-bar">
+      <span class="status-text" id="statusText">Loading...</span>
+      <span class="last-updated" id="lastUpdated"></span>
+    </div>
+
+    <div class="content">
+      <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <p>Fetching latest airdrops...</p>
+      </div>
+
+      <div class="airdrop-list" id="airdropList">
+        <!-- Airdrop items will be populated here -->
+      </div>
+
+      <div class="empty-state" id="emptyState" style="display: none;">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+          <path d="m2 17 10 5 10-5"></path>
+          <path d="m2 12 10 5 10-5"></path>
+        </svg>
+        <p>No airdrops available</p>
+        <button class="retry-btn" id="retryBtn">Try Again</button>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <a href="https://airdrops.io" target="_blank" class="footer-link">
+        View More Airdrops
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M7 17L17 7"></path>
+          <path d="M7 7h10v10"></path>
+        </svg>
+      </a>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
+

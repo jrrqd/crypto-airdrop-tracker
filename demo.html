@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Airdrop Tracker - Demo</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header-content">
+        <img src="icons/icon32.png" alt="Airdrop Tracker" class="logo">
+        <h1 class="title">Airdrop Tracker</h1>
+      </div>
+      <div class="refresh-btn" id="refreshBtn" title="Refresh data">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="23 4 23 10 17 10"></polyline>
+          <polyline points="1 20 1 14 7 14"></polyline>
+          <path d="m3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+        </svg>
+      </div>
+    </header>
+
+    <div class="status-bar">
+      <span class="status-text" id="statusText">8 active airdrops</span>
+      <span class="last-updated" id="lastUpdated">Updated 2m ago</span>
+    </div>
+
+    <div class="content">
+      <div class="loading" id="loading" style="display: none;">
+        <div class="spinner"></div>
+        <p>Fetching latest airdrops...</p>
+      </div>
+
+      <div class="airdrop-list" id="airdropList">
+        <!-- Demo airdrop items -->
+        <div class="airdrop-item">
+          <div class="airdrop-content">
+            <div class="airdrop-header">
+              <div class="airdrop-name">Warden Protocol</div>
+              <div class="airdrop-hotness">🔥 623</div>
+            </div>
+            <div class="airdrop-action">Start earning PUMPS by connecting wallet and completing tasks</div>
+          </div>
+          <div class="airdrop-status">
+            <span class="status-badge status-active">Active</span>
+            <svg class="external-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 17L17 7"></path>
+              <path d="M7 7h10v10"></path>
+            </svg>
+          </div>
+        </div>
+
+        <div class="airdrop-item">
+          <div class="airdrop-content">
+            <div class="airdrop-header">
+              <div class="airdrop-name">Resolv Protocol</div>
+              <div class="airdrop-hotness">🔥 484</div>
+            </div>
+            <div class="airdrop-action">Hold USR/RLP tokens, stake, and provide liquidity</div>
+          </div>
+          <div class="airdrop-status">
+            <span class="status-badge status-active">Active</span>
+            <svg class="external-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 17L17 7"></path>
+              <path d="M7 7h10v10"></path>
+            </svg>
+          </div>
+        </div>
+
+        <div class="airdrop-item">
+          <div class="airdrop-content">
+            <div class="airdrop-header">
+              <div class="airdrop-name">Solix Browser</div>
+              <div class="airdrop-hotness">🔥 474</div>
+            </div>
+            <div class="airdrop-action">Install and run the free browser extension</div>
+          </div>
+          <div class="airdrop-status">
+            <span class="status-badge status-active">Active</span>
+            <svg class="external-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 17L17 7"></path>
+              <path d="M7 7h10v10"></path>
+            </svg>
+          </div>
+        </div>
+
+        <div class="airdrop-item">
+          <div class="airdrop-content">
+            <div class="airdrop-header">
+              <div class="airdrop-name">Humanity Protocol</div>
+              <div class="airdrop-hotness">🔥 313</div>
+            </div>
+            <div class="airdrop-action">Complete testnet actions and verify identity</div>
+          </div>
+          <div class="airdrop-status">
+            <span class="status-badge status-active">Active</span>
+            <svg class="external-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 17L17 7"></path>
+              <path d="M7 7h10v10"></path>
+            </svg>
+          </div>
+        </div>
+
+        <div class="airdrop-item">
+          <div class="airdrop-content">
+            <div class="airdrop-header">
+              <div class="airdrop-name">MEXC Exchange</div>
+              <div class="airdrop-hotness">🔥 125</div>
+            </div>
+            <div class="airdrop-action">Register and deposit, complete trading requirements</div>
+          </div>
+          <div class="airdrop-status">
+            <span class="status-badge status-active">Active</span>
+            <svg class="external-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 17L17 7"></path>
+              <path d="M7 7h10v10"></path>
+            </svg>
+          </div>
+        </div>
+
+        <div class="airdrop-item">
+          <div class="airdrop-content">
+            <div class="airdrop-header">
+              <div class="airdrop-name">Nodepay Network</div>
+              <div class="airdrop-hotness">🔥 99</div>
+            </div>
+            <div class="airdrop-action">Collect points by sharing bandwidth</div>
+          </div>
+          <div class="airdrop-status">
+            <span class="status-badge status-active">Active</span>
+            <svg class="external-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 17L17 7"></path>
+              <path d="M7 7h10v10"></path>
+            </svg>
+          </div>
+        </div>
+
+        <div class="airdrop-item">
+          <div class="airdrop-content">
+            <div class="airdrop-header">
+              <div class="airdrop-name">Looter Game</div>
+              <div class="airdrop-hotness">🔥 96</div>
+            </div>
+            <div class="airdrop-action">Play the game and earn XP points</div>
+          </div>
+          <div class="airdrop-status">
+            <span class="status-badge status-active">Active</span>
+            <svg class="external-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 17L17 7"></path>
+              <path d="M7 7h10v10"></path>
+            </svg>
+          </div>
+        </div>
+
+        <div class="airdrop-item">
+          <div class="airdrop-content">
+            <div class="airdrop-header">
+              <div class="airdrop-name">Liquity V2</div>
+              <div class="airdrop-hotness">🔥 83</div>
+            </div>
+            <div class="airdrop-action">Supply BOLD tokens to stability pools</div>
+          </div>
+          <div class="airdrop-status">
+            <span class="status-badge status-active">Active</span>
+            <svg class="external-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M7 17L17 7"></path>
+              <path d="M7 7h10v10"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="empty-state" id="emptyState" style="display: none;">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+          <path d="m2 17 10 5 10-5"></path>
+          <path d="m2 12 10 5 10-5"></path>
+        </svg>
+        <p>No airdrops available</p>
+        <button class="retry-btn" id="retryBtn">Try Again</button>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <a href="https://airdrops.io" target="_blank" class="footer-link">
+        View More Airdrops
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M7 17L17 7"></path>
+          <path d="M7 7h10v10"></path>
+        </svg>
+      </a>
+    </footer>
+  </div>
+
+  <script>
+    // Demo functionality for testing
+    document.addEventListener('DOMContentLoaded', function() {
+      const refreshBtn = document.getElementById('refreshBtn');
+      const airdropItems = document.querySelectorAll('.airdrop-item');
+      
+      // Add click handlers to demo items
+      airdropItems.forEach(item => {
+        item.addEventListener('click', () => {
+          const name = item.querySelector('.airdrop-name').textContent;
+          alert(`Would open ${name} airdrop page in new tab`);
+        });
+      });
+      
+      // Add refresh animation
+      refreshBtn.addEventListener('click', () => {
+        refreshBtn.classList.add('spinning');
+        setTimeout(() => {
+          refreshBtn.classList.remove('spinning');
+        }, 1000);
+      });
+    });
+  </script>
+</body>
+</html>
+
